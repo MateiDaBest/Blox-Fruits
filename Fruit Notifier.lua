@@ -107,7 +107,7 @@ local function enableNotifier(fruit)
 	local fruit_alive = true
 
 	while fruit_alive and workspace_connection do
-		game.Players.LocalPlayer.PlayerGui:WaitForChild("Main"):WaitForChild("Radar").Text = fruit_name .. " found at: " .. math.floor((game.Players.LocalPlayer.Character:WaitForChild("UpperTorso").Position - fruit_child.Position).Magnitude * 0.15) .. "m away"
+		game.Players.LocalPlayer.PlayerGui:WaitForChild("Main"):WaitForChild("Radar").Text = "FRUIT DETECTED: " .. math.floor((game.Players.LocalPlayer.Character:WaitForChild("UpperTorso").Position - fruit_child.Position).Magnitude * 0.15) .. "m away."
 
 		task.wait(0.2)
 		fruit_alive = workspace:FindFirstChild(fruit.Name)
@@ -129,12 +129,12 @@ local function onSwitchClick()
 		led.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 
 		switch.TextLabel.Text = "Notifier (OFF)"
-		showText("Notifier disabled successfully", 2)
+		showText("Notifier disabled successfully.", 2)
 	else
 		led.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 
 		switch.TextLabel.Text = "Notifier (ON)"
-		showText("Notifier enabled successfully", 2)
+		showText("Notifier enabled successfully.", 2)
 
 		workspace_connection = workspace.ChildAdded:Connect(function(child)
 			if child.Name == "Fruit " then
