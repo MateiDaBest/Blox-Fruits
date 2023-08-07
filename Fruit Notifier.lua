@@ -150,7 +150,5 @@ local function onSwitchClick()
 	end
 end
 
-showText("Searching for fruits", 3)
-
 onSwitchClick()
 switch.Activated:Connect(onSwitchClick)
