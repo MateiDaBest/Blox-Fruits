@@ -82,7 +82,7 @@ local function enableNotifier(fruit)
 
 	local fruit_child = fruit:WaitForChild("Handle")
 
-	for __, descendant in ipairs(fruit:GetChildren()) do
+	for _, descendant in ipairs(fruit:GetChildren()) do
 		if descendant:IsA("MeshPart") and string.sub(descendant.Name, 1, 7) == "Meshes/" then
 			local i, j = string.find(descendant.Name, '_')
 			fruit_name = string.sub(descendant.Name, 8, i - 1)
